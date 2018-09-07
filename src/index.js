@@ -10,9 +10,10 @@ function _getDependencies(baseDir, data) {
         const file = depPath + '/package.json';
         const requirePath = file.replace('node_modules/', '');
         if (fs.existsSync(file)) {
-          const json = require(requirePath);
-          const version = json.version;
-          const name = json.name || requirePath;
+          const contents = fs.readFileSync(file);
+          const jsonContent = JSON.parse(contents);
+          const version = jsonContent.version;
+          const name = jsonContent.name || requirePath;
           data[name] = version;
         } else {
           _getDependencies(depPath, data);
