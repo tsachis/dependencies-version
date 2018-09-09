@@ -5,3 +5,15 @@
 
 Get a list of your runtime dependencies and their versions
 
+## Installation
+<code>dependencies-version</code> is available via npm:
+
+<code>$ npm install dependencies-version --save</code>
+
+In your Protractor configuration file, register protractor-jasmine2-screenshot-reporter in jasmine:
+
+## Usage
+<pre><code>const dependenciesVersion = require('dependencies-version');
+// ...
+console.log(dependenciesVersion.list());
+</code></pre>
