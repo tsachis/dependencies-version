@@ -27,5 +27,7 @@ function _getDependencies(baseDir, data) {
 }
 
 module.exports = {
-  list: () => _getDependencies('node_modules')
+  list: function list() {
+    return _getDependencies('node_modules');
+  }
 };

@@ -2,16 +2,7 @@
   "name": "dependencies-version",
   "version": "1.0.1",
   "description": "List your runtime dependencies and their versions",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "jest",
-    "check-jshint": "jshint src/index.js",
-    "prebuild": "rimraf dist",
-    "build": "npm run build:main && npm run build:umd && npm run build:umd.min",
-    "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
-    "build:umd": "webpack --output-filename index.umd.js",
-    "build:umd.min": "webpack --output-filename index.umd.min.js -p"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tsachis/dependencies-version.git"
@@ -23,7 +14,7 @@
     "modules"
   ],
   "files": [
-    "dist",
+    "index.js",
     "README.md"
   ],
   "author": {
@@ -34,22 +25,5 @@
   "bugs": {
     "url": "https://github.com/tsachis/dependencies-version/issues"
   },
-  "homepage": "https://github.com/tsachis/dependencies-version#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "ajv": "^6.0.0",
-    "babel-loader": "^8.0.0",
-    "ghooks": "^2.0.0",
-    "jshint": "^2.9.4",
-    "rimraf": "^2.5.4",
-    "webpack": "^4.17.0",
-    "webpack-cli": "^3.1.0"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run check-jshint"
-    }
-  }
+  "homepage": "https://github.com/tsachis/dependencies-version#readme"
 }
